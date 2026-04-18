@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="fi" class="theme-light has-background-grey-lighter">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kronometri</title>
+    <!-- Bulma CSS Framework -->
+    <link rel="stylesheet" href="bulma.min.css" />
+  </head>
+  <body>
+    <section class="hero is-fullheight">
+      <!-- Hero head: will stick at the top -->
+      <div class="hero-head">
+        <header class="navbar">
+          <div class="container">
+            <div id="navbarMenuHeroC" class="navbar-menu">
+              <div class="navbar-end">
+                <!-- Kellonaika -->
+                <div class="clock" id="clock">Nykyinen aika: --:--:--</div>
+              </div>
+            </div>
+          </div>
+        </header>
+      </div>
+
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <h1 class="title is-uppercase">Ajanotto</h1>
+          <p class="title is-1" id="display">00:00.00</p>
+          <button class="button is-primary" id="startBtn">Start</button>
+          <button
+            class="button is-info"
+            id="pauseBtn"
+            class="secondary"
+            disabled
+          >
+            Pause
+          </button>
+          <button class="button is-danger" id="resetBtn" disabled>Reset</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- JavaScript omassa tiedostossaan -->
+    <script src="timer.js"></script>
+  </body>
+</html>
