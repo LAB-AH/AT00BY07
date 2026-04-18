@@ -84,3 +84,19 @@ Commentit koodissa selittävät, missä kohdissa callbackeja käytetään ja mik
 3. Kronometri on heti käyttövalmis
 
 Erillisiä asennuksia tai kirjastoja ei tarvita.
+
+---
+
+## Kuvat
+
+![Ajanotto valmiustilassa](/assets/kronometri.png)
+_Ajanotto valmiustilassa_
+
+![Ajanotto käynnistetty](/assets/kronometri_started.png)
+_Ajanotto käynnistetty (Started)_
+
+![Ajanotto tauolla](/assets/kronometri_paused.png)
+_Ajanotto tauolla (Paused)_
+
+![Ajanotto pysäytetty](/assets/kronometri_stopped.png)
+\*Ajanotto pysäytetty (Stopped)
