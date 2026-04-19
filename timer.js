@@ -32,7 +32,7 @@ function pad2(n) {
 }
 
 function formatStopwatch(ms) {
-  // muoto: mm:ss.hh
+  // muoto: mm:ss.SS
   const totalHundredths = Math.floor(ms / 10);
   const hundredths = totalHundredths % 100;
 
@@ -48,6 +48,7 @@ function updateDisplay(ms) {
   displayEl.textContent = formatStopwatch(ms);
 }
 
+// ---- Painikkeiden päivitys ----
 function updateButtons() {
   startBtn.disabled = false;
 
@@ -105,13 +106,13 @@ function startRunning() {
 }
 
 function stopRunning() {
-  // pysäytä (EI nollaa)
+  // Pysäytä (EI nollaa)
   running = false;
 
   clearInterval(timerIntervalId);
   timerIntervalId = null;
 
-  // talletetaan tähän asti kertynyt aika
+  // Talletetaan tähän asti kertynyt aika
   const now = Date.now();
   elapsedBeforePause += now - startTimestamp;
 
@@ -120,7 +121,7 @@ function stopRunning() {
 }
 
 function pauseRunning() {
-  // tauota
+  // Tauota
   const now = Date.now();
   elapsedBeforePause += now - startTimestamp;
   running = false;
@@ -133,7 +134,7 @@ function pauseRunning() {
 }
 
 function resumeRunning() {
-  // jatka tauolta
+  // Jatka tauolta
   running = true;
   startTimestamp = Date.now();
 
@@ -143,7 +144,7 @@ function resumeRunning() {
 }
 
 function resetStopwatch() {
-  // nollaa vain pysäytettynä (varmistetaan vielä tässäkin)
+  // Nollaus vain pysäytettynä
   if (running) return;
 
   sessionStopped = false;
