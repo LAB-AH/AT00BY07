@@ -1,15 +1,9 @@
-# Kronometri – Web‑ohjelma (HTML + JavaScript + CSS)
+# Kronometri – (HTML + JavaScript + CSS)
 
 Tämä projekti on yksinkertainen selainpohjainen **kronometri**, joka on toteutettu käyttäen **HTML:ää ja JavaScriptiä**.  
 Sovellus on tehty osana kurssitehtävää ja sen tavoitteena on havainnollistaa **tapahtumapohjaista ohjelmointia** ja **takaisinkutsuja (callback)**.
 
 Tehtävänannosta on suoritettu kaikki kohdat, tavoiteltava arvosana on 5.
-
-- Käyttöliittymässä näkyy tämän hetkinen aika
-- Ajastimen voi käynnistää, tauottaa, pysäyttää ja nollata
-- Lähdekoodi on siisti ja kommentoitu tarpeellisilta osin
-
----
 
 ## Toiminnallisuus
 
@@ -28,8 +22,6 @@ Sovellus sisältää seuraavat ominaisuudet:
   - Käytettävissä vain, kun ajanotto on pysäytetty
 - Näytettävä aika muodossa `mm:ss.SS`
 
----
-
 ## Käytetyt teknologiat
 
 - **HTML5** – käyttöliittymän rakenne
@@ -38,8 +30,6 @@ Sovellus sisältää seuraavat ominaisuudet:
 
 JavaScript-koodi on sijoitettu omaan tiedostoonsa (`timer.js`) erilleenn HTML:stä.  
 Tyyleinä käytetään [Bulma](https://bulma.io) CSS-kirjastoa.
-
----
 
 ## Tapahtumapohjainen ohjelmointi
 
@@ -52,8 +42,6 @@ Ohjelmassa hyödynnetään tapahtumapohjaista ohjelmointia seuraavissa kohdissa:
 
 Näissä käytetään `addEventListener`‑metodia, joka reagoi käyttäjän toimintaan.
 
----
-
 ## Takaisinkutsut (callback-funktiot)
 
 Takaisinkutsuja käytetään mm.:
@@ -64,8 +52,6 @@ Takaisinkutsuja käytetään mm.:
   - Päivittää kronometrin kulun 50 ms välein ajanoton ollessa käynnissä
 
 Kommentit koodissa selittävät, missä kohdissa callbackeja käytetään ja mikä niiden tarkoitus on.
-
----
 
 ## Tiedostorakenne
 
@@ -79,17 +65,13 @@ Kommentit koodissa selittävät, missä kohdissa callbackeja käytetään ja mik
 
 ```
 
----
-
-## Käynnistys
+## Ohjelman suorittaminen
 
 1. Lataa tai kloonaa repository
 2. Avaa `index.html` selaimessa
 3. Kronometri on heti käyttövalmis
 
 Erillisiä asennuksia tai kirjastoja ei tarvita.
-
----
 
 ## Kuvakaappaukset toiminnasta
 
@@ -104,8 +86,6 @@ _Ajanotto tauolla (Paused)_
 
 ![Ajanotto pysäytetty](/assets/kronometri_stopped.png)
 _Ajanotto pysäytetty (Stopped)_
-
----
 
 ## Lähdekoodi
 
@@ -144,14 +124,7 @@ _Ajanotto pysäytetty (Stopped)_
           <p class="title is-1" id="display">00:00.00</p>
           <!-- Toimintopainikkeet -->
           <button class="button is-primary" id="startBtn">Start</button>
-          <button
-            class="button is-info"
-            id="pauseBtn"
-            class="secondary"
-            disabled
-          >
-            Pause
-          </button>
+          <button class="button is-info" id="pauseBtn" class="secondary" disabled>Pause</button>
           <button class="button is-danger" id="resetBtn" disabled>Reset</button>
         </div>
       </div>
@@ -165,7 +138,7 @@ _Ajanotto pysäytetty (Stopped)_
 
 ### JavaScript / timer.js
 
-```js
+```javascript
 "use strict";
 
 /*
@@ -232,11 +205,7 @@ function updateButtons() {
   pauseBtn.disabled = (!running && elapsedBeforePause === 0) || sessionStopped;
 
   // Pause-napin teksti (näkyy vain kun ei ole disabloitu, mutta pidetään selkeänä)
-  pauseBtn.textContent = running
-    ? "Pause"
-    : elapsedBeforePause > 0
-      ? "Resume"
-      : "Pause";
+  pauseBtn.textContent = running ? "Pause" : elapsedBeforePause > 0 ? "Resume" : "Pause";
 
   // Nollaa vain kun EI käynnissä ja aikaa on kertynyt
   resetBtn.disabled = running || elapsedBeforePause === 0;
